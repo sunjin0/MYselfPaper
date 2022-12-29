@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客发布</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../editor/css/editormd.css">
+    <script src="../js/jsTool/jQuery.js"></script>
+    <script src="../js/jsTool/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../editor/editormd.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- 导航 -->
+        <div class="row">
+            <nav class="navbar navbar-default index_nav navbar-static-top" style="margin: 0;">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <span class="navbar-brand">博客发布</span>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../index.html">首页</a></li>
+                            <li><a href="../classify.html">分类</a></li>
+                            <li><a href="../lables.html">标签</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <div class="aouther">
+                                    <img src="../images/tx.jpeg" alt="">
+                                    <span class="info" style="color: white; padding-right: 20px;">张三 <i
+                                            class="iconfont icon-hanhan-01-019"></i></span>
+                                    <ul class="list-group user_info">
+                                        <li class="list-group-item">注销</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <!-- 中间内容 -->
+        <div class="container release_text">
+            <div class="row minor_nav ">
+                <ul class="nav nav-pills navbar-right ">
+                    <li role="presentation" class="active"><a href="release.html">发布</a></li>
+                    <li role="presentation"><a href="admin.html">博客管理</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="form-inline" >
+                    <select name="select"  class="form-control col-md-1 green-select" >
+                      <option value="原创">原创</option>
+                      <option value="转载">转载</option>
+                      <option value="翻译">翻译</option>
+                    </select>
+                    <input type="text" class="form-control col-md-11" placeholder="标题" id="title_text">
+             </div>
+             <div class="form-group row" style="margin-top: 50px;min-height: 400px;z-index: 1000;" id="test-editor">
+                <textarea name=""  cols="30" rows="11" class="form-control col-md-12 col-xs-12 col-sm-12" placeholder="博客" id="body_text" style="display: none;"></textarea>
+             </div>
+            <div class="row">
+                 <div class="col-md-6 col-sm-6 col-xs-12 form-inline" >
+                <label for="classify" class=" green-select btn col-md-2">分类</label> 
+                <select name="select" id="classify" class="form-control col-md-10" id="classify_text">
+                    <option value="原创">原创</option>
+                    <option value="转载">转载</option>
+                    <option value="翻译">翻译</option>
+                  </select>
+             </div>
+             <div class="col-md-6 col-sm-6 col-xs-12 form-inline" >
+                <label for="classify2" class=" green-select btn col-md-2" id="lable_text">标签</label> 
+                <select name="select" id="classify2" class="form-control col-md-10" >
+                    <option value="原创">原创</option>
+                    <option value="转载">转载</option>
+                    <option value="翻译">翻译</option>
+                  </select>
+             </div>
+            </div>
+             <div class="col-md-12">
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1">推荐
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option1">转载声明
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option1">赞赏
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox4" value="option1">评论
+                </label>
+             </div>
+             <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible" role="alert" style="display: none;">
+                    <button type="button" class="close" ><span aria-hidden="true">&times;</span></button>
+                </div>
+             </div>
+             <div class="col-md-3 pull-right text-right" style="margin-bottom: 20px;">
+                <button type="button" class="btn btn-danger">
+                    返回
+                </button>
+                <button type="button" class="btn btn-info">
+                    保存
+                </button>
+                <button type="button" class="btn btn-success" id="sumint">
+                    发布
+                </button>
+             </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="container-fluid index_bottom">
+        <div class="row">
+            <ul class="bottom_list">
+                <li class="col-md-4 col-md-4 hidden-xs"><img src="../images/wx.jpg" alt="扫一扫联系我" width="100px"></li>
+                <li class="col-md-2 col-sm-2 col-xs-6">
+                    <dl>
+                        <dt>最新博客</dt>
+                        <dd>1</dd>
+                        <dd>2</dd>
+                    </dl>
+                </li>
+                <li class="col-md-2 col-sm-2 col-xs-6">
+                    <dl>
+                        <dt>联系我</dt>
+                        <dd>Email: 2367283463@qq.com</dd>
+                        <dd>QQ: 2367283463</dd>
+                    </dl>
+                </li>
+                <li class="col-md-4 col-sm-4 hidden-xs">
+                    <dl>
+                        <dt>座右铭</dt>
+                        <dd>这是我的个人博客，在这里会分享编程，心得，写作，思考</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <p>Copyright 2022 -- 2023 @Sun</p>
+        </div>
+    </div>
+    </div>
+</body>
+<script type="text/javascript">
+  $(function() {
+        var editor = editormd("test-editor", {
+            // width  : "100%",
+            // height : "100%",
+            path   : "../editor/lib/"
+        });
+    });
+</script>
+
+</html>
